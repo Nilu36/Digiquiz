@@ -1,0 +1,21 @@
+DIGIQUIZ UPDATE
+
+Changes:
+1. Subject cards now show the subject code saved in the subjects table.
+2. Quiz and Flashcards buttons pass the selected subject's database ID.
+3. Quiz and Flashcards pages resolve the selected subject and show its code/name.
+4. Subject dropdowns display the subject code with the subject name.
+5. Added add_subject_code_column.sql for existing databases missing the subject_code column.
+
+IMPORTANT DATABASE STEP:
+- If the subjects table already has subject_code, do not run the ALTER TABLE statement in add_subject_code_column.sql.
+- If it does not, import/run add_subject_code_column.sql in phpMyAdmin.
+- Then go to Admin > Subjects and make sure each subject has its correct subject code.
+- The website cannot safely guess missing subject codes; an empty code is displayed as "Not added yet".
+
+Files changed:
+- subjects.php
+- quiz.php
+- flashcards.php
+- database.sql
+- add_subject_code_column.sql
